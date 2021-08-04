@@ -1,11 +1,22 @@
 import "./App.css";
 
-import { Test } from "react-excel-export";
+import { DownloadExcel } from "react-excel-export";
+
+const users = [
+  {
+    name: "Shafikul Islam",
+    email: "shafikul.me@gmail.com",
+  },
+  {
+    name: "Zubayer Anas",
+    email: "zub.me@gmail.com",
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <Test message="Hello World" />
+      <DownloadExcel data={users} />
     </div>
   );
 }

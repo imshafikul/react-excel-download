@@ -1,3 +1,3 @@
-import Test from "./Test";
+import DownloadExcel from "./DownloadExcel";
 
-export { Test };
+export { DownloadExcel };

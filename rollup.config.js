@@ -17,9 +17,6 @@ var MODE = [
   {
     fomart: "esm",
   },
-  //   {
-  //     fomart: "umd",
-  //   },
 ];
 
 var config = [];
@@ -36,7 +33,7 @@ MODE.map((m) => {
       sourcemap: true,
     },
     // this externelizes react to prevent rollup from compiling it
-    external: ["react", /@babel\/runtime/],
+    external: ["react", /@babel\/runtime/, "prop-types", "xlsx", "file-saver"],
     plugins: [
       // these are babel comfigurations
       babel({
