@@ -1,6 +1,6 @@
 {
   "name": "react-excel-export",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React JSON to excel export",
   "main": "dist/index.cjs.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "rollup -c -w",
     "build": "rollup -c",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
