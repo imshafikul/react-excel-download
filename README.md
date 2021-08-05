@@ -59,14 +59,17 @@ class Example extends Component {
         className="export-button"
       />
     );
-    return (
-      <DownloadExcel
-        data={books}
-        className="btn"
-        buttonLabel="Download top 90 books"
-        fileName="top-90-books"
-      />
-    );
   }
 }
 ```
+
+#### Properties
+
+| Property      | Type   | Required | Default value | Description                                                                                                |
+| :------------ | :----- | :------- | :------------ | :--------------------------------------------------------------------------------------------------------- |
+| `data`        | array  | yes      |               | Data array                                                                                                 |
+| `fileName`    | string | yes      | sample-file   | Filename of the sheet                                                                                      |
+| `buttonLabel` | string | yes      | Export Data   | Futton Label                                                                                               |
+| `className`   | string | no       |               | Additional style classes                                                                                   |
+| `invisible`   | bool   | no       | false         | Button will hide by Style                                                                                  |
+| `itemKey`     | bool   | no       |               | value will use in button `id` property.You can use this id to export content without displaying the button |
