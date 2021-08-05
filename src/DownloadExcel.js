@@ -2,12 +2,20 @@ import React from "react";
 import { saveAs } from "file-saver";
 import XLSX from "xlsx";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 const EXCEL_TYPE =
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
 const EXCEL_EXTENSION = ".xlsx";
 
-const DownloadExcel = ({ fileName, buttonLabel, invisible, data, itemKey }) => {
+const DownloadExcel = ({
+  fileName,
+  buttonLabel,
+  invisible,
+  data,
+  itemKey,
+  className,
+}) => {
   const exportToExcel = () => {
     const ws = XLSX.utils.json_to_sheet(data);
     const wb = {
@@ -26,7 +34,14 @@ const DownloadExcel = ({ fileName, buttonLabel, invisible, data, itemKey }) => {
   if (invisible) style.display = "none";
 
   return (
-    <button id={itemKey} onClick={exportToExcel} style={style}>
+    <button
+      id={itemKey}
+      onClick={exportToExcel}
+      style={style}
+      className={classNames({
+        [className]: className,
+      })}
+    >
       {buttonLabel}
     </button>
   );
@@ -38,6 +53,7 @@ DownloadExcel.propTypes = {
   data: PropTypes.array.isRequired,
   buttonLabel: PropTypes.string,
   itemKey: PropTypes.string,
+  className: PropTypes.string,
 };
 
 DownloadExcel.defaultProps = {

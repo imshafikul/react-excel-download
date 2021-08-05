@@ -1,22 +1,17 @@
 import "./App.css";
-
+import books from "./books";
 import { DownloadExcel } from "react-excel-export";
-
-const users = [
-  {
-    name: "Shafikul Islam",
-    email: "shafikul.me@gmail.com",
-  },
-  {
-    name: "Zubayer Anas",
-    email: "zub.me@gmail.com",
-  },
-];
 
 function App() {
   return (
     <div className="App">
-      <DownloadExcel data={users} />
+      <header className="App-header">React Excel Export</header>
+      <DownloadExcel
+        data={books}
+        className="btn"
+        buttonLabel="Download top 90 books"
+        fileName="top-90-books"
+      />
     </div>
   );
 }

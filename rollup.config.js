@@ -33,7 +33,14 @@ MODE.map((m) => {
       sourcemap: true,
     },
     // this externelizes react to prevent rollup from compiling it
-    external: ["react", /@babel\/runtime/, "prop-types", "xlsx", "file-saver"],
+    external: [
+      "react",
+      /@babel\/runtime/,
+      "prop-types",
+      "xlsx",
+      "file-saver",
+      "classnames",
+    ],
     plugins: [
       // these are babel comfigurations
       babel({
