@@ -4,7 +4,7 @@
   "description": "React JSON to excel export",
   "main": "dist/index.cjs.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "start": "rollup -c -w",
     "build": "rollup -c",
     "predeploy": "cd example && npm install && npm run build",
@@ -37,7 +37,11 @@
     "@babel/preset-react": "^7.14.5",
     "@rollup/plugin-babel": "^5.3.0",
     "autoprefixer": "^10.3.1",
+    "cross-env": "^7.0.3",
     "gh-pages": "^3.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
     "rollup": "^2.55.1",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-styles": "^3.14.1"
